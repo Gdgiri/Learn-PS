@@ -1,41 +1,31 @@
-// Step 1: Make the number proper divisor
-function properDivisors(n) {
-  const divisors = [];
-  for (let i = 1; i <= n / 2; i++) {
-    if (n % i === 0) {
-      divisors.push(i);
+// Function to find the sum of proper divisors of a number
+function sumOfProperDivisors(n) {
+    let sum = 0;
+    const divisors = []; // Array to store and display divisors
+    for (let i = 1; i <= n / 2; i++) {
+      if (n % i === 0) {
+        divisors.push(i); // Collect each divisor
+        sum += i; // Add each divisor to the sum
+      }
     }
+    console.log(`Divisors of ${n}: ${divisors.join(", ")}`);
+    return sum;
   }
-  return divisors;
-}
-
-// Step 2: Calculate sum of divisors
-function sumOfDivisors(divisors) {
-  return divisors.reduce((sum, divisor) => sum + divisor, 0);
-}
-
-// Step 3: Check if numbers are amicable
-function areAmicable(num1, num2) {
-  const divisors1 = properDivisors(num1);
-  const divisors2 = properDivisors(num2);
-
-  const sum1 = sumOfDivisors(divisors1);
-  const sum2 = sumOfDivisors(divisors2);
-
-  // Display divisors
-  console.log(`Divisors of ${num1}: ${divisors1.join(", ")}`);
-  console.log(`Divisors of ${num2}: ${divisors2.join(", ")}`);
-
-  return sum1 === num2 && sum2 === num1;
-}
-
-// Input numbers
-const num1 = 220;
-const num2 = 284;
-
-// Step 4: Display if the numbers are amicable
-if (areAmicable(num1, num2)) {
-  console.log(`${num1} and ${num2} are amicable numbers.`);
-} else {
-  console.log(`${num1} and ${num2} are not amicable numbers.`);
-}
+  
+  // Function to check if two numbers are amicable
+  function areAmicable(num1, num2) {
+    const sum1 = sumOfProperDivisors(num1); // Sum of divisors of num1
+    const sum2 = sumOfProperDivisors(num2); // Sum of divisors of num2
+    return sum1 === num2 && sum2 === num1;
+  }
+  
+  // Example usage
+  const num1 = 220;
+  const num2 = 284;
+  
+  if (areAmicable(num1, num2)) {
+    console.log(`${num1} and ${num2} are amicable numbers.`);
+  } else {
+    console.log(`${num1} and ${num2} are not amicable numbers.`);
+  }
+  
