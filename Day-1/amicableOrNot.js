@@ -19,7 +19,6 @@ function areAmicable(num1, num2) {
   return sum1 === num2 && sum2 === num1;
 }
 
-// Example usage
 const num1 = 220;
 const num2 = 284;
 

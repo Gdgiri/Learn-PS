@@ -1,3 +1,6 @@
+const num1 = 220;
+const num2 = 284;
+
 function properDivisor(n) {
   const Divisor = [];
   let sum = 0;
@@ -10,8 +13,6 @@ function properDivisor(n) {
   return { Divisor, sum };
 }
 
-const num1 = 220;
-const num2 = 284;
 const sNum1 = properDivisor(num1);
 const sNum2 = properDivisor(num2);
 console.log(sNum1.Divisor);
