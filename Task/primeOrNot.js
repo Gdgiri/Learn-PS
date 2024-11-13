@@ -12,12 +12,22 @@ function findPrimeOrNot(n) {
   return true;
 }
 
+
+// this also correct 
+
+
+// function primeOrNot(number) {
+//   if (findPrimeOrNot(number)) {
+//     console.log(`${number} is prime`);
+//   } else {
+//     console.log(`${number} is not prime`);
+//   }
+// }
+
+// optimization
 function primeOrNot(number) {
-  if (findPrimeOrNot(number)) {
-    console.log(`${number} is prime`);
-  } else {
-    console.log(`${number} is not prime`);
-  }
+  let result = findPrimeOrNot(number) ? "is prime" : "is not prime";
+  console.log(`${number} ${result}`);
 }
 
 primeOrNot(4);
